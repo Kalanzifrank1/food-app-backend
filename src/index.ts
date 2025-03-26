@@ -13,6 +13,9 @@ const app = express()
 app.use(express.json())
 app.use(cors())
 
+
+const port = process.env.PORT || 6001
+
 app.get("/health", async (req: Request, res: Response) => {
     res.send({message: "health ok!"})
 })
@@ -23,6 +26,6 @@ app.get('/test', async (req: Request, res: Response) => {
     res.json({ message: "hello" })
 })
 
-app.listen(7000, () => {
+app.listen(port, () => {
     console.log("server started")
 })
