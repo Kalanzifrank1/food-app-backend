@@ -7,22 +7,13 @@
     "build": "npm install && npx tsc",
     "start": "node dist/index.js"
   },
-<<<<<<< HEAD
   "engines": {
-    "node": ">=18.18.0 <22.5.1"
+    "node": ">=18.18.0 <=22.5.1"
   },
-=======
-
-   "engines": {
-  "node": ">=18.18.0 <22.5.1"
-  },
-
-  
->>>>>>> 6199d6c28221bdafb26a2208e944c3a8edb0ad9c
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
+  "description": "��#\u0000 \u0000f\u0000o\u0000o\u0000d\u0000-\u0000a\u0000p\u0000p\u0000-\u0000b\u0000a\u0000c\u0000k\u0000e\u0000n\u0000d\u0000\r\u0000 \u0000#\u0000 \u0000f\u0000o\u0000o\u0000d\u0000-\u0000a\u0000p\u0000p\u0000-\u0000b\u0000a\u0000c\u0000k\u0000e\u0000n\u0000d\u0000\r\u0000 \u0000",
   "dependencies": {
     "backend": "file:",
     "cors": "^2.8.5",
@@ -42,5 +33,13 @@
     "nodemon": "^3.1.9",
     "ts-node": "^10.9.2",
     "typescript": "^5.8.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kalanzifrank1/food-app-backend.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Kalanzifrank1/food-app-backend/issues"
+  },
+  "homepage": "https://github.com/Kalanzifrank1/food-app-backend#readme"
 }
