@@ -7,9 +7,18 @@
     "build": "npm install && npx tsc",
     "start": "node dist/index.js"
   },
+<<<<<<< HEAD
   "engines": {
     "node": ">=18.18.0 <22.5.1"
   },
+=======
+
+   "engines": {
+  "node": ">=18.18.0 <22.5.1"
+  },
+
+  
+>>>>>>> 6199d6c28221bdafb26a2208e944c3a8edb0ad9c
   "keywords": [],
   "author": "",
   "license": "ISC",
