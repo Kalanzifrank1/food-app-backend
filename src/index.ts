@@ -14,10 +14,10 @@ app.use(express.json())
 app.use(cors())
 
 
-const port = process.env.PORT || 6001
+const port = process.env.PORT ? Number(process.env.PORT) : 6001
 
 app.get("/health", async (req: Request, res: Response) => {
-    res.send({message: "health ok!"})
+    res.status(200).json({status: "health ok!"})
 })
 
 app.use("/api/my/user", MyUserRoutes)
@@ -26,6 +26,6 @@ app.get('/test', async (req: Request, res: Response) => {
     res.json({ message: "hello" })
 })
 
-app.listen(port, () => {
+app.listen(port, '0.0.0.0', () => {
     console.log("server started")
 })
