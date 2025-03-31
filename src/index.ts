@@ -20,10 +20,19 @@ cloudinary.config({
 const app = express()
 
 app.use(express.json())
-app.use(cors())
+app.use(cors({
+    origin: process.env.FRONTEND_URL, // e.g., "https://yourfrontend.com"
+    credentials: true,
+    allowedHeaders: ["Content-Type", "Authorization"],
+    exposedHeaders: ["Authorization"],
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"]
+  }));
 
 
 const port = process.env.PORT ? Number(process.env.PORT) : 6001
+
+// Add this before your routes
+app.disable('x-powered-by'); // Hide Express server information
 
 app.get("/health", async (req: Request, res: Response) => {
     res.status(200).json({status: "health ok!"})

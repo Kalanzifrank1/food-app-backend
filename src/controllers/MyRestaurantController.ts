@@ -4,19 +4,7 @@ import cloudinary from "cloudinary"
 import mongoose from "mongoose"
 
 
-const getMyRestaurant = async (req: Request, res: Response): Promise<any> => {
-    try {
-        const restaurant = await Restaurant.findOne({ user: req.userId });
-        if (!restaurant) {
-            return res.status(404).json({ message: "Restaurant not found" }); // Added return
-        }
 
-        return res.json(restaurant); // Added return
-    } catch (error) {
-        console.log("error", error);
-        return res.status(500).json({ message: "Error fetching restaurant" }); // Fixed message
-    }
-};
 
 const createMyRestaurant = async(req: Request, res: Response): Promise<any> => {
 
@@ -50,6 +38,22 @@ const createMyRestaurant = async(req: Request, res: Response): Promise<any> => {
         res.status(500).json({message: "Something went wrong"})
     }
 }
+
+
+const getMyRestaurant = async (req: Request, res: Response): Promise<any> => {
+    try {
+        const restaurant = await Restaurant.findOne({ user: req.userId });
+        console.log(restaurant)
+        if (!restaurant) {
+            return res.status(404).json({ message: "Restaurant not found" }); // Added return
+        }
+
+        return res.json(restaurant); // Added return
+    } catch (error) {
+        console.log("error", error);
+        return res.status(500).json({ message: "Error fetching restaurant" }); // Fixed message
+    }
+};
 
 
 const updateMyRestaurant = async(req: Request, res: Response): Promise<any> => {
